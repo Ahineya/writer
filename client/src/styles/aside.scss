@@ -5,6 +5,7 @@
   max-width: $width;
 
   overflow-y: auto;
+  border-bottom: 1px solid #ccc;
 
   .contents {
     height: calc(100% - 42px);

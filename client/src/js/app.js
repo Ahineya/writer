@@ -4,6 +4,9 @@ import { Aside } from './components/aside';
 import { TopBar } from './components/topBar';
 import { Fux } from './lib/fux';
 import { SyncService } from './services/sync';
+import { Config } from './components/config';
+
+const DEBUG = true;
 
 export class App {
   constructor() {
@@ -13,9 +16,10 @@ export class App {
   async start() {
     const content = await SyncService.load();
 
-    this.materials = Fux.state('materials', content, { DEBUG: true });
-    this.selected = Fux.state('selected', { uuid: content.model[0].uuid }, { DEBUG: true });
-    this.count = Fux.state('count', {number: this.countSymbols()}, {DEBUG: true});
+    this.materials = Fux.state('materials', content, { DEBUG });
+    this.selected = Fux.state('selected', { uuid: content.model[0].uuid }, { DEBUG });
+    this.count = Fux.state('count', {number: this.countSymbols()}, {DEBUG});
+    Fux.state('config', {isShown: false}, {DEBUG});
 
     var toolbarOptions = [
       [{ 'font': [] }],
@@ -63,6 +67,7 @@ export class App {
 
     new Aside('.contents');
     new TopBar('.top-panel');
+    new Config('#config');
   }
 
   countSymbols = () => {

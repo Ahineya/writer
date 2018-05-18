@@ -1,6 +1,5 @@
 .material {
-  border: 1px solid #ccc;
-  border-right: 0;
+  border-bottom: 1px solid #ccc;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -8,7 +7,6 @@
   position: relative;
   background: white;
   overflow: hidden;
-  border-top: 0;
 
   &-chapter {
     background: lightgray;

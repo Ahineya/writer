@@ -1,0 +1,16 @@
+#config {
+  $width: 250px;
+
+  min-width: $width;
+  max-width: $width;
+
+  overflow-y: auto;
+
+  border: 1px solid #ccc;
+
+  &.config-hidden {
+    overflow: hidden;
+    max-width: 1px;
+    min-width: 1px;
+  }
+}

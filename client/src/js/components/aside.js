@@ -68,6 +68,9 @@ export class Aside {
         });
       break;
       case 'delete':
+        if (this.materials.model.length === 1) {
+          return;
+        }
         this.materials.update({
           model: this.materials.model.filter(m => m.uuid !== cmd.uuid)
         });
