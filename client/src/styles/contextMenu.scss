@@ -1,0 +1,38 @@
+.context-menu {
+  position: fixed;
+  border: 1px solid gray;
+  list-style-type: none;
+  background-color: white;
+  padding: 0;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  overflow: hidden;
+
+  & > li {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 20px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lightgray;
+    }
+
+    &:first-child {
+      border-bottom: 1px solid #aaa;
+      background-color: #f5e7d1;
+
+      &:hover {
+        cursor: default;
+        background-color: #f5e7d1;
+      }
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+}

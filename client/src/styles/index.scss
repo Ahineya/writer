@@ -1,0 +1,27 @@
+@import "colors";
+
+@import "topPanel";
+@import "aside";
+@import "material";
+@import "content";
+@import "contextMenu";
+@import "popup";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+}
+
+.hidden {
+  display: none !important;
+}

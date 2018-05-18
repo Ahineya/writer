@@ -1,0 +1,81 @@
+#contents {
+  $width: 250px;
+
+  min-width: $width;
+  max-width: $width;
+
+  overflow-y: auto;
+
+  .contents {
+    height: calc(100% - 42px);
+  }
+
+  .add-top, .add-bottom, .delete, .rename, .convert, .config, .exclude {
+    position: absolute;
+    right: 0;
+    height: 50%;
+    width: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin: 0;
+    cursor: pointer;
+    &:hover {
+      background-color: #ccc;
+    }
+
+    display: none;
+  }
+
+  .add-top {
+    top: 0;
+    border-top: 0;
+    border-right: 0;
+  }
+
+  .add-bottom {
+    bottom: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+  }
+
+  .delete {
+    top: 0;
+    border-top: 0;
+    border-right: 0;
+    right: 20px;
+  }
+
+  .rename {
+    top: 0;
+    border-top: 0;
+    border-right: 0;
+    right: 40px;
+  }
+
+  .convert {
+    bottom: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    right: 20px;
+  }
+
+  .exclude {
+    bottom: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    right: 40px;
+  }
+
+  .config {
+
+  }
+
+  .material:hover {
+    .add-top, .add-bottom, .delete, .rename, .convert, .config, .exclude  {
+      display: block;
+    }
+  }
+}

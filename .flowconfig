@@ -1,0 +1,13 @@
+[include]
+./client/src/js
+
+[ignore]
+./client/dist/*
+
+[libs]
+./client/src/js/interfaces/global.js
+
+[options]
+module.name_mapper='.*\(.scss\)' -> 'CSSModule'
+module.name_mapper='.*\(.icss\)' -> 'CSSString'
+module.system=haste

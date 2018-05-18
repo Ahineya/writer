@@ -1,0 +1,52 @@
+{
+  "name": "Writer",
+  "version": "0.0.1",
+  "description": "Writer",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index-standalone.js",
+    "build-client": "webpack --config webpack.config.js",
+    "build-all": "rm -rf client/dist && mkdir client/dist && cp client/src/index.html client/dist/ && npm run build-client",
+    "serve": "npm run build-all && npm start",
+    "build-prod": "npm run lint && npm run flow && npm run build-all",
+    "lint": "eslint ./client/src/ --ext .js",
+    "flow": "flow",
+    "watch": "webpack --config webpack.config.js --watch",
+    "dev": "concurrently 'npm run watch' 'npm start'"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "click-outside": "^2.0.2",
+    "concurrently": "^3.5.1",
+    "csvjson": "^5.0.0",
+    "express": "^4.16.3",
+    "quill": "^1.3.6",
+    "request": "^2.85.0",
+    "sortablejs": "^1.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "css-loader": "^0.28.11",
+    "css-to-string-loader": "^0.1.3",
+    "electron": "^2.0.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.3.0",
+    "webpack-cli": "^2.0.13"
+  }
+}
